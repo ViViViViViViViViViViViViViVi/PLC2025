@@ -1,13 +1,13 @@
-
 inpFunc :: Int -> Int -> [Int]
 inpFunc a b = [a..b]
 
 
 applicatorFunc :: [Int] -> Char -> Double
-applicatorFunc inp s = 
-    if s == 's' 
-        then fromIntegral (sum inp) 
-        else fromIntegral (sum inp) / fromIntegral (length inp) 
+applicatorFunc inp s
+    | s == 's'  = fromIntegral (sum inp)
+    | s == 'a'  = fromIntegral (sum inp) / fromIntegral (length inp)  
+    | otherwise = error "Invalid option! Please enter 's' for sum or 'a' for average."
+
 
 main = do
     putStrLn "Enter the starting number (a):"
